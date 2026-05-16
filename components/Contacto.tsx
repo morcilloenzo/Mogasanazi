@@ -58,53 +58,54 @@ export default function Contacto() {
   }
 
   return (
-    <section id="contacto" className="py-24" style={{ background: '#F7F8FA' }}>
+    <section id="contacto" className="py-16 md:py-24" style={{ background: '#F7F8FA' }}>
       <div className="max-w-[1400px] mx-auto px-[4vw]">
 
-        {/* Header */}
-        <div
-          ref={header.ref}
-          className="mb-16"
-          style={{ opacity: header.visible ? 1 : 0, transform: header.visible ? 'none' : 'translateY(40px)', transition: 'all .7s ease' }}
-        >
-          <div className="flex items-center gap-2.5 mb-4">
-            <span className="block w-8 h-0.5" style={{ background: 'var(--green)' }} />
-            <span className="text-[12px] font-semibold uppercase tracking-[.2em]" style={{ color: 'var(--green)' }}>Hablemos</span>
-          </div>
-          <h2 className="uppercase leading-[.95] mb-4" style={{ fontFamily: 'var(--font-display)', fontWeight: 900, fontSize: 'clamp(36px,5vw,64px)', color: 'var(--navy)' }}>
-            Solicitar<br />Cotización
-          </h2>
-          <p className="text-[17px] leading-7 font-light max-w-lg" style={{ color: '#4A5568' }}>
-            Completá el formulario y un comercial propio de la región te responde en menos de 24 horas.
-          </p>
-        </div>
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-10 md:gap-16 lg:gap-20 items-start">
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-20 items-start">
-
-          {/* Info */}
+          {/* Columna izquierda: header + info */}
           <div
             ref={form.ref}
             className="flex flex-col gap-8"
             style={{ opacity: form.visible ? 1 : 0, transform: form.visible ? 'none' : 'translateY(40px)', transition: 'all .7s ease' }}
           >
+            {/* Header */}
+            <div ref={header.ref}>
+              <div className="flex items-center gap-2.5 mb-4">
+                <span className="block w-8 h-0.5" style={{ background: 'var(--green)' }} />
+                <span className="text-[12px] font-semibold uppercase tracking-[.2em]" style={{ color: 'var(--green)' }}>Hablemos</span>
+              </div>
+              <h2 className="uppercase leading-[.95] mb-4" style={{ fontFamily: 'var(--font-display)', fontWeight: 900, fontSize: 'clamp(36px,5vw,64px)', color: 'var(--navy)' }}>
+                Solicitar<br />Cotización
+              </h2>
+              <p className="text-[15px] sm:text-[17px] leading-7 font-light max-w-lg" style={{ color: '#4A5568' }}>
+                Completá el formulario y un comercial propio de la región te responde en menos de 24 horas.
+              </p>
+            </div>
+
             {[
               {
-                icon: <path d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z M15 11a3 3 0 11-6 0 3 3 0 016 0z" />,
+                icon: (
+                  <path fillRule="evenodd" clipRule="evenodd" d="M12 2a8 8 0 0 0-8 8c0 5.4 6.7 11.2 7.4 11.7a1 1 0 0 0 1.2 0C13.3 21.2 20 15.4 20 10a8 8 0 0 0-8-8Zm0 11a3 3 0 1 1 0-6 3 3 0 0 1 0 6Z" />
+                ),
                 label: 'Ubicación', value: 'Alto Valle de Río Negro\nPatagonia Argentina',
               },
               {
-                icon: <path d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />,
+                icon: (
+                  <path d="M6.62 10.79a15.05 15.05 0 0 0 6.59 6.59l2.2-2.2a1 1 0 0 1 1.02-.24c1.12.37 2.33.57 3.57.57a1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A17 17 0 0 1 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1c0 1.25.2 2.45.57 3.57a1 1 0 0 1-.25 1.02l-2.2 2.2Z" />
+                ),
                 label: 'Teléfono', value: '+54 (0299) 000-0000',
               },
               {
-                icon: <path d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />,
+                icon: (
+                  <path fillRule="evenodd" clipRule="evenodd" d="M3.4 5.07A2 2 0 0 1 5 4.5h14a2 2 0 0 1 1.6.57L12 11.27 3.4 5.07ZM3 7.06v10.94a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V7.06l-8.42 6.06a1 1 0 0 1-1.16 0L3 7.06Z" />
+                ),
                 label: 'Email', value: 'ventas@mogasa.com.ar',
               },
             ].map((item) => (
               <div key={item.label} className="flex items-start gap-4">
-                <div className="w-11 h-11 flex items-center justify-center flex-shrink-0" style={{ background: 'var(--navy)' }}>
-                  <svg className="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={1.5} strokeLinecap="round" strokeLinejoin="round" style={{ color: 'var(--green)' }}>
-                    <path d={typeof item.icon === 'string' ? item.icon : ''} />
+                <div className="w-12 h-12 flex items-center justify-center flex-shrink-0" style={{ background: 'var(--navy)' }}>
+                  <svg className="w-[22px] h-[22px]" viewBox="0 0 24 24" fill="currentColor" style={{ color: 'var(--green)' }}>
                     {item.icon}
                   </svg>
                 </div>
@@ -143,12 +144,12 @@ export default function Contacto() {
           </div>
 
           {/* Formulario */}
-          <div style={{ background: '#fff', padding: 48, borderTop: '4px solid var(--navy)' }}>
-            <div style={{ fontFamily: 'var(--font-display)', fontSize: 24, fontWeight: 800, textTransform: 'uppercase', color: 'var(--navy)', marginBottom: 32 }}>
+          <div className="p-6 sm:p-8 md:p-12" style={{ background: '#fff', borderTop: '4px solid var(--navy)' }}>
+            <div className="text-[20px] sm:text-[24px] mb-7 sm:mb-8" style={{ fontFamily: 'var(--font-display)', fontWeight: 800, textTransform: 'uppercase', color: 'var(--navy)' }}>
               Formulario de Contacto
             </div>
 
-            <div className="grid grid-cols-2 gap-4 mb-5">
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-4 sm:mb-5">
               <div>
                 <label style={labelStyle}>Empresa</label>
                 <input name="empresa" value={fields.empresa} onChange={handleChange} style={inputStyle('empresa')} placeholder="Nombre de su empresa" />
@@ -159,7 +160,7 @@ export default function Contacto() {
               </div>
             </div>
 
-            <div className="grid grid-cols-2 gap-4 mb-5">
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-4 sm:mb-5">
               <div>
                 <label style={labelStyle}>Email</label>
                 <input type="email" name="email" value={fields.email} onChange={handleChange} style={inputStyle('email')} placeholder="email@empresa.com" />

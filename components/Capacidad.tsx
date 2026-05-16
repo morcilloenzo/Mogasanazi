@@ -8,7 +8,7 @@ export default function Capacidad() {
   const right = useReveal()
 
   return (
-    <section id="capacidad" className="tex-overlay py-24" style={{ background: '#F7F8FA' }}>
+    <section id="capacidad" className="tex-overlay py-16 md:py-24" style={{ background: '#F7F8FA' }}>
       <div className="max-w-[1400px] mx-auto px-[4vw]">
 
         <p className="mb-6 text-xs font-bold uppercase tracking-[0.22em] text-green">

@@ -27,8 +27,8 @@ export default function SobreNosotros() {
 
   return (
     <section id="nosotros" className="overflow-hidden" style={{ background: 'var(--navy)' }}>
-      <div className="max-w-[1400px] mx-auto px-[4vw] py-24">
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-20 items-center">
+      <div className="max-w-[1400px] mx-auto px-[4vw] py-16 md:py-24">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-12 md:gap-16 lg:gap-20 items-center">
 
           {/* IMAGEN */}
           <div

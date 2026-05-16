@@ -56,7 +56,7 @@ export default function Logistica() {
   const [zonaActiva, setZonaActiva] = useState<string | null>(null)
 
   return (
-    <section id="logistica" className="py-24" style={{ background: 'var(--navy)' }}>
+    <section id="logistica" className="py-16 md:py-24" style={{ background: 'var(--navy)' }}>
       <div className="max-w-[1400px] mx-auto px-[4vw]">
 
         {/* Header */}
@@ -80,7 +80,7 @@ export default function Logistica() {
             style={{
               fontFamily: 'var(--font-display)',
               fontWeight: 900,
-              fontSize:   'clamp(36px,5vw,64px)',
+              fontSize:   'clamp(32px,5vw,64px)',
               color:      '#fff',
             }}
           >
@@ -104,7 +104,7 @@ export default function Logistica() {
 
           {/* Col 1+2: mapa + zonas + localidades */}
           <div
-            className="lg:col-span-2 p-8"
+            className="lg:col-span-2 p-5 sm:p-8"
             style={{ background: 'var(--navy-mid)', border: '1px solid rgba(255,255,255,0.08)' }}
           >
             {/* Botones de zona */}
@@ -194,7 +194,7 @@ export default function Logistica() {
 
           {/* Col 3: CTA verde */}
           <div
-            className="flex flex-col justify-between p-8"
+            className="flex flex-col justify-between gap-6 p-6 sm:p-8"
             style={{ background: 'var(--green)' }}
           >
             <div>

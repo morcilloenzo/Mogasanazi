@@ -37,16 +37,16 @@ const items = [
 export default function TrustBar() {
   return (
     <div
-      className="px-[4vw] py-7"
+      className="px-[4vw] py-5 sm:py-7"
       style={{ background: 'var(--navy-deep)', borderBottom: '1px solid rgba(255,255,255,0.06)' }}
     >
-      <div className="max-w-[1400px] mx-auto flex items-center justify-between gap-5 flex-wrap">
+      <div className="max-w-[1400px] mx-auto grid grid-cols-2 sm:flex sm:items-center sm:justify-between gap-x-4 gap-y-3 sm:gap-5 sm:flex-wrap">
         {items.map((item) => (
-          <div key={item.label} className="flex items-center gap-3 text-[13px] font-medium uppercase tracking-[.08em] text-[rgba(255,255,255,0.5)]">
-            <svg className="w-5 h-5 flex-shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2} style={{ color: 'var(--green)' }}>
+          <div key={item.label} className="flex items-center gap-2 sm:gap-3 text-[11px] sm:text-[13px] font-medium uppercase tracking-[.06em] sm:tracking-[.08em] text-[rgba(255,255,255,0.5)] leading-tight">
+            <svg className="w-4 h-4 sm:w-5 sm:h-5 flex-shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2} style={{ color: 'var(--green)' }}>
               {item.icon}
             </svg>
-            {item.label}
+            <span>{item.label}</span>
           </div>
         ))}
       </div>

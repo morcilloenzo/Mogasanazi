@@ -34,9 +34,9 @@ export default function Diferenciales() {
       className="tex-overlay"
       style={{ background: '#F7F8FA', borderTop: '1px solid #EAEDF2' }}
     >
-      <div className="max-w-[1400px] mx-auto px-[4vw] py-24">
+      <div className="max-w-[1400px] mx-auto px-[4vw] py-16 md:py-24">
         {/* Header */}
-        <div ref={ref} className={`reveal mb-16 ${visible ? 'visible' : ''}`}>
+        <div ref={ref} className={`reveal mb-10 md:mb-16 ${visible ? 'visible' : ''}`}>
           <div className="flex items-center gap-2.5 mb-4">
             <span className="block w-8 h-0.5" style={{ background: 'var(--green)' }} />
             <span className="text-[12px] font-semibold uppercase tracking-[.2em]" style={{ color: 'var(--green)' }}>
@@ -53,27 +53,26 @@ export default function Diferenciales() {
 
         {/* Grid */}
         <div
-          className="grid grid-cols-2 md:grid-cols-4"
-          style={{ borderTop: '1px solid #D0D6E0' }}
+          className="grid grid-cols-2 md:grid-cols-4 border-t border-[#D0D6E0]"
         >
-          {items.map((item, i) => (
+          {items.map((item, i) => {
+            const mobileRightBorder = i % 2 === 0 ? 'border-r border-[#D0D6E0]' : ''
+            const desktopRightBorder = i < 3 ? 'md:border-r md:border-[#D0D6E0]' : 'md:border-r-0'
+            const mobileResetForDesktop = i === 1 ? 'border-r-0 md:border-r' : ''
+            return (
             <div
               key={item.num}
-              className="dif-item px-8 py-12"
-              style={{
-                borderRight: i < 3 ? '1px solid #D0D6E0' : 'none',
-                borderBottom: '1px solid #D0D6E0',
-              }}
+              className={`dif-item px-5 sm:px-8 py-8 sm:py-12 border-b border-[#D0D6E0] ${mobileRightBorder} ${desktopRightBorder} ${mobileResetForDesktop}`}
             >
               <div
-                className="text-[11px] font-bold uppercase tracking-[.2em] mb-6"
+                className="text-[11px] font-bold uppercase tracking-[.2em] mb-5 sm:mb-6"
                 style={{ color: 'var(--green)' }}
               >
                 {item.num}
               </div>
               <div
-                className="dif-icon-el mb-6 text-[rgba(11,31,58,0.25)]"
-                style={{ fontSize: 40 }}
+                className="dif-icon-el mb-5 sm:mb-6 text-[rgba(11,31,58,0.25)]"
+                style={{ fontSize: 36 }}
               >
                 {i === 0 && '⬡'}
                 {i === 1 && '◎'}
@@ -81,16 +80,17 @@ export default function Diferenciales() {
                 {i === 3 && '◈'}
               </div>
               <div
-                className="uppercase mb-3"
-                style={{ fontFamily: 'var(--font-display)', fontWeight: 800, fontSize: 22, color: 'var(--navy)', letterSpacing: '.03em' }}
+                className="uppercase mb-3 text-[18px] sm:text-[22px]"
+                style={{ fontFamily: 'var(--font-display)', fontWeight: 800, color: 'var(--navy)', letterSpacing: '.03em' }}
               >
                 {item.title}
               </div>
-              <p className="text-[14px] leading-7" style={{ color: '#4A5568' }}>
+              <p className="text-[13px] sm:text-[14px] leading-6 sm:leading-7" style={{ color: '#4A5568' }}>
                 {item.desc}
               </p>
             </div>
-          ))}
+            )
+          })}
         </div>
       </div>
     </section>

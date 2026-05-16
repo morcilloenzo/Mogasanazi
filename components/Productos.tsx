@@ -62,13 +62,13 @@ export default function Productos() {
   const header = useReveal()
 
   return (
-    <section id="productos" className="py-24" style={{ background: '#fff' }}>
+    <section id="productos" className="py-16 md:py-24" style={{ background: '#fff' }}>
       <div className="max-w-[1400px] mx-auto px-[4vw]">
 
         {/* Header */}
         <div
           ref={header.ref}
-          className="flex items-end justify-between mb-16 gap-6 flex-wrap"
+          className="flex items-start md:items-end justify-between mb-10 md:mb-16 gap-6 flex-col md:flex-row"
           style={{
             opacity:    header.visible ? 1 : 0,
             transform:  header.visible ? 'none' : 'translateY(40px)',
@@ -115,10 +115,10 @@ export default function Productos() {
         {products.map((p) => (
           <div
             key={p.id}
-            className="prod-card relative overflow-hidden cursor-pointer group"
+            className={`prod-card relative overflow-hidden cursor-pointer group ${
+              p.tall ? 'min-h-[340px] sm:min-h-[420px] lg:min-h-[520px] sm:row-span-2' : 'min-h-[260px] sm:min-h-[280px]'
+            }`}
             style={{
-              gridRow:   p.tall ? 'span 2' : undefined,
-              minHeight: p.tall ? '520px' : '280px',
               background: p.variant === 'green' ? 'var(--green-dark)' : 'var(--navy-mid)',
             }}
           >
@@ -152,7 +152,7 @@ export default function Productos() {
 
             {/* Texto */}
             <div
-              className="absolute bottom-0 left-0 right-0 p-7 z-20"
+              className="absolute bottom-0 left-0 right-0 p-5 sm:p-7 z-20"
               style={{
                 transform:  'translateY(8px)',
                 transition: 'transform .3s ease',
@@ -165,11 +165,12 @@ export default function Productos() {
                 {p.tag}
               </div>
               <div
-                className="text-white uppercase leading-[1] mb-2"
+                className={`text-white uppercase leading-[1] mb-2 ${
+                  p.tall ? 'text-[26px] sm:text-[32px] lg:text-[38px]' : 'text-[22px] sm:text-[26px]'
+                }`}
                 style={{
                   fontFamily: 'var(--font-display)',
                   fontWeight: 900,
-                  fontSize:   p.tall ? 38 : 26,
                   letterSpacing: '.02em',
                 }}
               >
