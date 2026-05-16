@@ -3,9 +3,7 @@
 import Image from 'next/image'
 import { useReveal } from '@/hooks/useReveal'
 
-type Product = { id: string; img: string; tag: string; name: string; desc: string; badge?: string }
-
-const topProducts: Product[] = [
+const topProducts = [
   {
     id:    'corrugado',
     img:   '/images/products/corrugado.jpg',
@@ -24,7 +22,7 @@ const topProducts: Product[] = [
   },
 ]
 
-const bottomProducts: Product[] = [
+const bottomProducts = [
   {
     id:   'rollos',
     img:  '/images/products/rollos.png',
@@ -55,6 +53,7 @@ const bottomProducts: Product[] = [
   },
 ]
 
+type Product = { id: string; img: string; tag: string; name: string; desc: string; badge?: string }
 function ProductCard({ p, tall }: { p: Product; tall: boolean }) {
   return (
     <div
