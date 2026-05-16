@@ -1,0 +1,116 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import 'leaflet/dist/leaflet.css';
+@import url('https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;600;700;800&family=Barlow:wght@300;400;500;600&display=swap');
+
+.leaflet-container {
+  width: 100%;
+  height: 100%;
+}
+
+.mogasa-marker {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: #22A652;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  font-weight: 700;
+  box-shadow: 0 0 0 4px rgba(34, 166, 82, 0.2);
+}
+
+:root {
+  --font-display: 'Barlow Condensed', sans-serif;
+  --font-body:    'Barlow', sans-serif;
+  --navy:         #0B1F3A;
+  --navy-deep:    #060f1e;
+  --navy-mid:     #122845;
+  --green:        #22A652;
+  --green-dark:   #1a7d3e;
+  --green-light:  #2fc465;
+}
+
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: var(--font-body);
+  background: #ffffff;
+  color: var(--navy);
+  overflow-x: hidden;
+}
+
+/* Tipografía industrial */
+.font-display { font-family: var(--font-display); }
+.font-body    { font-family: var(--font-body); }
+
+/* Reveal animation */
+.reveal {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: opacity 0.7s ease, transform 0.7s ease;
+}
+.reveal.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Hero fade-up */
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(32px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+.fade-up          { opacity: 0; animation: fadeUp 0.8s ease forwards; }
+.fade-up-delay-1  { animation-delay: 0.15s; }
+.fade-up-delay-2  { animation-delay: 0.3s; }
+.fade-up-delay-3  { animation-delay: 0.45s; }
+.fade-up-delay-4  { animation-delay: 0.6s; }
+
+/* Product card hover */
+.prod-card .prod-desc { max-height: 0; overflow: hidden; transition: max-height 0.4s ease, opacity 0.3s; opacity: 0; }
+.prod-card:hover .prod-desc { max-height: 100px; opacity: 1; }
+.prod-card .prod-link { opacity: 0; transition: opacity 0.3s 0.05s; }
+.prod-card:hover .prod-link { opacity: 1; }
+.prod-card .prod-img  { transition: transform 0.6s ease, filter 0.4s; }
+.prod-card:hover .prod-img  { transform: scale(1.05); filter: brightness(0.45); }
+.prod-card .prod-content { transform: translateY(8px); transition: transform 0.3s; }
+.prod-card:hover .prod-content { transform: translateY(0); }
+
+/* Diferencial item hover */
+.dif-item { border-top: 2px solid transparent; transition: border-color 0.3s, background 0.3s; }
+.dif-item:hover { border-color: var(--green); }
+.dif-item .dif-icon-el { transition: color 0.3s; }
+.dif-item:hover .dif-icon-el { color: var(--green); }
+
+/* Cliente card hover */
+.cli-card { border-top: 3px solid transparent; transition: border-color 0.3s, background 0.3s; }
+.cli-card:hover { border-color: var(--green); background: #ffffff; }
+.cli-card .cli-icon-stroke { transition: stroke 0.3s; }
+.cli-card:hover .cli-icon-stroke { stroke: var(--green); }
+
+/* Logo slider */
+@keyframes marquee {
+  from { transform: translateX(0); }
+  to   { transform: translateX(-50%); }
+}
+.marquee-track {
+  animation: marquee 28s linear infinite;
+}
+.marquee-track:hover {
+  animation-play-state: paused;
+}
+
+/* Texture overlay */
+.tex-overlay { position: relative; }
+.tex-overlay::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image: url("data:image/svg+xml,%3Csvg width='6' height='6' viewBox='0 0 6 6' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%23000000' fill-opacity='0.025'%3E%3Cpath d='M5 0h1L0 6V5zm1 5v1H5zM0 0h1v1H0z'/%3E%3C/g%3E%3C/svg%3E");
+  pointer-events: none;
+  z-index: 0;
+}
+.tex-overlay > * { position: relative; z-index: 1; }
