@@ -10,6 +10,7 @@ const topProducts = [
     tag:   'Kraft · Violeta',
     name:  'Papel Corrugado',
     desc:  'Planchas de cartón corrugado de alta resistencia para embalaje industrial. Múltiples capas y gramajes.',
+    badge: 'Premium',
   },
   {
     id:    'seda',
@@ -67,7 +68,7 @@ function ProductCard({ p, tall }: { p: typeof topProducts[0] & { badge?: string 
         alt={p.name}
         fill
         loading="lazy"
-        className="object-cover prod-img transition-transform duration-700 group-hover:scale-105 group-hover:brightness-75"
+        className="object-cover prod-img transition-transform duration-700 group-hover:scale-105 group-hover:brightness-90"
       />
 
       {p.badge && (

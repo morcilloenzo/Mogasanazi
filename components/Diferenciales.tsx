@@ -11,7 +11,7 @@ const items = [
   {
     num:   '02',
     title: 'Respuesta en 48 horas',
-    desc:  'Stock permanente y logística propia. Entrega en 48 horas en todo el Alto Valle, Río Negro y Neuquén.',
+    desc:  'Stock permanente y logística eficiente. Entregas diarias en todo el Alto Valle, Valle Medio y Neuquén.',
   },
   {
     num:   '03',

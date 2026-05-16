@@ -72,7 +72,7 @@ export default function Capacidad() {
                   className="text-2xl font-extrabold text-navy md:text-3xl"
                   style={{ fontFamily: 'var(--font-display)' }}
                 >
-                  6300 m² 
+                  3500 m² 
                 </p>
                 <p className="mt-1 text-[10px] font-bold uppercase tracking-[0.18em] text-gray-500">
                   Tamaño de planta
@@ -83,7 +83,7 @@ export default function Capacidad() {
                   className="text-2xl font-extrabold text-navy md:text-3xl"
                   style={{ fontFamily: 'var(--font-display)' }}
                 >
-                  900.000 kg
+                  950.000 KG
                 </p>
                 <p className="mt-1 text-[10px] font-bold uppercase tracking-[0.18em] text-gray-500">
                   Capacidad productiva

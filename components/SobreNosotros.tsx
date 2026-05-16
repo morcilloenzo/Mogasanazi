@@ -42,11 +42,11 @@ export default function SobreNosotros() {
             </div>
             {/* Badge de años */}
             <div
-              className="absolute bottom-[-20px] right-[-20px] hidden md:flex flex-col items-center justify-center p-6"
-              style={{ background: 'var(--green)', width: '55%', aspectRatio: '1' }}
+              className="absolute bottom-[-14px] right-[-14px] md:bottom-[-20px] md:right-[-20px] flex flex-col items-center justify-center p-3 md:p-6"
+              style={{ background: 'var(--green)', width: '40%', aspectRatio: '1', maxWidth: 160 }}
             >
-              <div className="text-white leading-none" style={{ fontFamily: 'var(--font-display)', fontWeight: 900, fontSize: 56 }}>+30</div>
-              <div className="text-[12px] font-semibold uppercase tracking-[.15em] text-center mt-2" style={{ color: 'rgba(255,255,255,0.8)' }}>
+              <div className="text-white leading-none text-[36px] md:text-[56px]" style={{ fontFamily: 'var(--font-display)', fontWeight: 900 }}>+30</div>
+              <div className="text-[9px] md:text-[12px] font-semibold uppercase tracking-[.15em] text-center mt-1 md:mt-2" style={{ color: 'rgba(255,255,255,0.8)' }}>
                 Años en la Patagonia
               </div>
             </div>
