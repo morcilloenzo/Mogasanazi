@@ -53,7 +53,8 @@ const bottomProducts = [
   },
 ]
 
-function ProductCard({ p, tall }: { p: typeof topProducts[0] & { badge?: string }, tall: boolean }) {
+type Product = { id: string; img: string; tag: string; name: string; desc: string; badge?: string }
+function ProductCard({ p, tall }: { p: Product; tall: boolean }) {
   return (
     <div
       className={`prod-card relative overflow-hidden cursor-pointer group ${
