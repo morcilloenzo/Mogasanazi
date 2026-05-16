@@ -31,13 +31,12 @@ export default function Capacidad() {
               className="text-3xl font-extrabold uppercase leading-[1.1] tracking-tight text-navy md:text-4xl lg:text-5xl"
               style={{ fontFamily: 'var(--font-display)' }}
             >
-              Capacidad Industrial<br />
-              <span className="text-navy/70">Para Grandes Demandas</span>
+              SOLUCIONES QUE <br /> ACOMPAÑAN <br />
+              <span className="text-navy/70">CADA COSECHA</span>
             </h2>
 
             <p className="mt-6 max-w-md text-base leading-relaxed text-gray-600 md:text-lg">
-              Contamos con tecnología, infraestructura y equipo humano para garantizar
-              producción constante y entregas en cada temporada crítica.
+              Acompañamos a quienes impulsan la producción frutícola, brindando soluciones de packaging confiables para cada etapa de la temporada. Sabemos que en cada cosecha la continuidad y la respuesta rápida hacen la difernecia. Por eso combinamos capacidad industrial, personalización y flexibilidad para adaptarnos a las necesidades de cada operación.
             </p>
 
             <div className="mt-8">
@@ -73,10 +72,10 @@ export default function Capacidad() {
                   className="text-2xl font-extrabold text-navy md:text-3xl"
                   style={{ fontFamily: 'var(--font-display)' }}
                 >
-                  4
+                  6300 m² 
                 </p>
                 <p className="mt-1 text-[10px] font-bold uppercase tracking-[0.18em] text-gray-500">
-                  Líneas de producción
+                  Tamaño de planta
                 </p>
               </div>
               <div>

@@ -1,5 +1,6 @@
 'use client'
 
+import Image from 'next/image'
 import { useReveal } from '@/hooks/useReveal'
 
 const pilares = [
@@ -36,27 +37,15 @@ export default function SobreNosotros() {
             className="relative"
             style={{ opacity: left.visible ? 1 : 0, transform: left.visible ? 'none' : 'translateY(40px)', transition: 'all .7s ease' }}
           >
-            {/*
-              Reemplazá el SVG por fotos reales:
-
-              import Image from 'next/image'
-
-              <div className="relative w-full aspect-[3/4]">
-                <Image src="/images/planta-principal.jpg" alt="Planta MOGASA" fill className="object-cover" />
-              </div>
-              <div className="absolute bottom-[-24px] right-[-24px] w-[55%] aspect-square border-4" style={{ borderColor: 'var(--navy)' }}>
-                <Image src="/images/operarios.jpg" alt="Operarios MOGASA" fill className="object-cover" />
-              </div>
-            */}
-            <div className="w-full relative overflow-hidden" style={{ aspectRatio: '3/4', background: 'var(--navy-mid)' }}>
-              <PlantaSVG />
+            <div className="w-full relative overflow-hidden" style={{ aspectRatio: '3/4' }}>
+              <Image src="/images/4.png" alt="MOGASA" fill className="object-cover" />
             </div>
             {/* Badge de años */}
             <div
               className="absolute bottom-[-20px] right-[-20px] hidden md:flex flex-col items-center justify-center p-6"
               style={{ background: 'var(--green)', width: '55%', aspectRatio: '1' }}
             >
-              <div className="text-white leading-none" style={{ fontFamily: 'var(--font-display)', fontWeight: 900, fontSize: 56 }}>+20</div>
+              <div className="text-white leading-none" style={{ fontFamily: 'var(--font-display)', fontWeight: 900, fontSize: 56 }}>+30</div>
               <div className="text-[12px] font-semibold uppercase tracking-[.15em] text-center mt-2" style={{ color: 'rgba(255,255,255,0.8)' }}>
                 Años en la Patagonia
               </div>
@@ -72,7 +61,7 @@ export default function SobreNosotros() {
               className="inline-flex items-center gap-2 px-4 py-2 text-white mb-8 text-[11px] font-semibold uppercase tracking-[.15em]"
               style={{ background: 'var(--green)' }}
             >
-              Quiénes somos
+              Sobre nosotros
             </div>
 
             <div
@@ -87,12 +76,11 @@ export default function SobreNosotros() {
             </div>
 
             <p className="text-[15px] leading-[1.8] mb-10 font-light" style={{ color: 'rgba(255,255,255,0.6)' }}>
-              MOGASA es una empresa industrial con más de dos décadas operando en el Alto Valle, Río Negro y Neuquén.
-              Fabricamos y proveemos insumos de embalaje para productores frutícolas, empaques y empresas industriales
-              de la Patagonia Argentina.
-              <br /><br />
-              No somos un intermediario. Tenemos planta, depósito, stock y logística propia. Cuando empieza la
-              temporada, nuestros clientes ya tienen asegurado el abastecimiento.
+              MOGASA es una empresa industrial que acompaña a productores del sector fruticula brindando
+              soluciones de packaging confiables para cada etapa de la temporada.
+              Sabemos que en cada cosecha la continuidad y la respuesta rapida hacen la diferencia. Por  eso 
+              Combinamos capacidad industrial, personalización y flexibilidad para adaptarnos a las necesidades 
+              de cada operación.
             </p>
 
             <div className="flex flex-col gap-4">
@@ -116,29 +104,3 @@ export default function SobreNosotros() {
   )
 }
 
-function PlantaSVG() {
-  return (
-    <svg className="absolute inset-0 w-full h-full" viewBox="0 0 400 533" preserveAspectRatio="xMidYMid slice">
-      <rect width="400" height="533" fill="#0d2035" />
-      <rect x="40" y="180" width="320" height="280" fill="#122845" stroke="#1d3d5c" strokeWidth="1" />
-      <polygon points="0,180 200,80 400,180" fill="#0f2438" stroke="#1d3d5c" strokeWidth="1" />
-      <rect x="60" y="130" width="60" height="30" fill="#1a4d6e" rx="2" />
-      <rect x="170" y="110" width="60" height="30" fill="#1a4d6e" rx="2" />
-      <rect x="280" y="130" width="60" height="30" fill="#1a4d6e" rx="2" />
-      <rect x="0" y="420" width="400" height="113" fill="#0a1b2a" />
-      <rect x="50" y="360" width="80" height="10" fill="#8B6914" rx="1" />
-      <rect x="50" y="350" width="80" height="10" fill="#22A652" rx="1" />
-      <rect x="50" y="340" width="80" height="10" fill="#22A652" rx="1" />
-      <rect x="50" y="330" width="80" height="10" fill="#1a7d3e" rx="1" />
-      <circle cx="260" cy="370" r="55" fill="none" stroke="#22A652" strokeWidth="3" />
-      <circle cx="260" cy="370" r="44" fill="none" stroke="#1a7d3e" strokeWidth="2" />
-      <circle cx="260" cy="370" r="33" fill="none" stroke="#22A652" strokeWidth="2" />
-      <circle cx="260" cy="370" r="22" fill="none" stroke="#1a7d3e" strokeWidth="2" />
-      <circle cx="260" cy="370" r="11" fill="none" stroke="#22A652" strokeWidth="2" />
-      <circle cx="260" cy="370" r="4" fill="#22A652" />
-      <circle cx="80" cy="210"  r="3" fill="#22A652" opacity=".8" />
-      <circle cx="340" cy="210" r="3" fill="#22A652" opacity=".8" />
-      <circle cx="200" cy="200" r="3" fill="#22A652" opacity=".8" />
-    </svg>
-  )
-}

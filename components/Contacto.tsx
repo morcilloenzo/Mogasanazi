@@ -79,7 +79,7 @@ export default function Contacto() {
                 Solicitar<br />Cotización
               </h2>
               <p className="text-[15px] sm:text-[17px] leading-7 font-light max-w-lg" style={{ color: '#4A5568' }}>
-                Completá el formulario y un comercial propio de la región te responde en menos de 24 horas.
+                Completá el formulario y nos comunicaremos con vos en menos de 24 horas.
               </p>
             </div>
 
@@ -138,7 +138,7 @@ export default function Contacto() {
               <p style={{ fontSize: 13, lineHeight: 1.7, color: 'rgba(255,255,255,0.5)' }}>
                 Lunes a viernes de 8:00 a 18:00 hs.<br />
                 Sábados de 8:00 a 13:00 hs.<br />
-                Zona: Alto Valle y Patagonia Argentina
+                Localidad: General Roca, Rio Negro
               </p>
             </div>
           </div>
