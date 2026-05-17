@@ -1,7 +1,7 @@
 'use client'
 
 import dynamic from 'next/dynamic'
-import { useState } from 'react'
+import Image from 'next/image'
 import { useReveal } from '@/hooks/useReveal'
 
 const MapaReal = dynamic(() => import('./MapaReal'), { ssr: false })
@@ -32,7 +32,6 @@ const zonasDescripciones: Record<string, string> = {
 export default function Logistica() {
   const header = useReveal()
   const body   = useReveal()
-  const [zonaActiva, setZonaActiva] = useState<string | null>(null)
 
   return (
     <section id="logistica" className="py-16 md:py-24" style={{ background: 'var(--navy)' }}>
@@ -86,54 +85,30 @@ export default function Logistica() {
             className="lg:col-span-2 p-5 sm:p-8"
             style={{ background: 'var(--navy-mid)', border: '1px solid rgba(255,255,255,0.08)' }}
           >
-            {/* Botones de zona */}
+            {/* Zonas — estáticas */}
             <div className="grid grid-cols-2 gap-2 mb-6">
               {zonas.map((z) => (
-                <button
+                <div
                   key={z.id}
-                  onClick={() => setZonaActiva(zonaActiva === z.id ? null : z.id)}
-                  className="flex items-center gap-2.5 px-4 py-3 text-left transition-all duration-200"
+                  className="flex items-center gap-2.5 px-4 py-3"
                   style={{
-                    background:  zonaActiva === z.id ? 'rgba(34,166,82,0.15)' : 'rgba(255,255,255,0.04)',
-                    border:      `1px solid ${zonaActiva === z.id ? '#22A652' : 'rgba(255,255,255,0.1)'}`,
+                    background:   'rgba(255,255,255,0.04)',
+                    border:       '1px solid rgba(255,255,255,0.1)',
                     borderRadius: 2,
-                    cursor: 'pointer',
                   }}
                 >
                   <span
-                    className="flex-shrink-0 rounded-full"
-                    style={{
-                      width:      10,
-                      height:     10,
-                      background: zonaActiva === z.id ? '#22A652' : 'rgba(255,255,255,0.25)',
-                      transition: 'background .2s',
-                      boxShadow:  zonaActiva === z.id ? '0 0 0 3px rgba(34,166,82,0.25)' : 'none',
-                    }}
+                    className="dot-pulse flex-shrink-0 rounded-full"
+                    style={{ width: 8, height: 8, background: '#86efac' }}
                   />
-                  <span
-                    className="text-[13px] font-semibold uppercase tracking-[.06em]"
-                    style={{ color: zonaActiva === z.id ? '#fff' : 'rgba(255,255,255,0.6)' }}
-                  >
+                  <span className="text-[13px] font-semibold uppercase tracking-[.06em]" style={{ color: '#86efac' }}>
                     {z.label}
                   </span>
-                </button>
+                </div>
               ))}
             </div>
 
             {/* Descripción zona activa */}
-            {zonaActiva && (
-              <div
-                className="mb-6 px-4 py-3 text-[13px] leading-relaxed"
-                style={{
-                  background:  'rgba(34,166,82,0.08)',
-                  borderLeft:  '3px solid var(--green)',
-                  color:       'rgba(255,255,255,0.7)',
-                }}
-              >
-                {zonasDescripciones[zonaActiva]}
-              </div>
-            )}
-
             {/* Mapa real interactivo */}
             <div
               className="mb-6"
@@ -142,7 +117,7 @@ export default function Logistica() {
                 border:     '1px solid rgba(255,255,255,0.06)',
               }}
             >
-              <MapaReal zonaActiva={zonaActiva} revealed={body.visible} />
+              <MapaReal zonaActiva={null} revealed={body.visible} />
             </div>
 
             {/* Localidades */}
@@ -173,30 +148,88 @@ export default function Logistica() {
 
           {/* Col 3: CTA verde */}
           <div
-            className="flex flex-col justify-between gap-6 p-6 sm:p-8"
+            className="flex flex-col justify-between gap-8"
             style={{ background: 'var(--green)' }}
           >
-            <div>
-              <div className="mb-5">
-                <svg className="w-10 h-10" viewBox="0 0 40 40" fill="none">
-                  <rect width="40" height="40" rx="2" fill="rgba(255,255,255,0.15)" />
-                  <path d="M12 20h16M20 12l8 8-8 8" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
-                </svg>
+            {/* Foto con fade */}
+            <div className="relative w-full flex-shrink-0" style={{ height: 520, marginBottom: -220 }}>
+              <Image
+                src="/images/logistica-planta.png"
+                alt="Planta MOGASA"
+                fill
+                className="object-cover"
+                style={{ objectPosition: '50% 40%' }}
+              />
+              <div
+                className="absolute inset-0"
+                style={{ background: 'linear-gradient(to bottom, transparent 0%, transparent 70%, var(--green) 100%)' }}
+              />
+            </div>
+
+            <div className="relative flex flex-col gap-8 px-6 sm:px-8 pb-6 sm:pb-8">
+            <div className="flex flex-col gap-7">
+              {/* Badge */}
+              <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full" style={{ background: 'rgba(0,0,0,0.25)' }}>
+                <span className="dot-pulse w-2 h-2 rounded-full flex-shrink-0" style={{ background: '#86efac' }} />
+                <span className="text-[11px] font-bold uppercase tracking-[.2em]" style={{ color: '#86efac' }}>
+                  Operación Activa
+                </span>
               </div>
+
+              {/* Título */}
               <h3
-                className="uppercase leading-[1.05] mb-4 text-white"
+                className="uppercase leading-[1.05] text-white"
                 style={{
                   fontFamily: 'var(--font-display)',
                   fontWeight: 900,
-                  fontSize:   'clamp(24px,2.5vw,32px)',
+                  fontSize:   'clamp(24px,2.5vw,34px)',
                 }}
               >
                 Respuesta rápida en temporada
               </h3>
-              <p className="text-[14px] leading-7 mb-8" style={{ color: 'rgba(255,255,255,0.8)' }}>
-                Logística eficiente para cumplir con los tiempos de la producción. Stock permanente, entrega garantizada.
-              </p>
 
+              {/* Items */}
+              <div className="flex flex-col gap-5">
+                {[
+                  {
+                    icon: (
+                      <path strokeLinecap="round" strokeLinejoin="round" d="M20 7H4a1 1 0 0 0-1 1v9a1 1 0 0 0 1 1h16a1 1 0 0 0 1-1V8a1 1 0 0 0-1-1zM3 10h18M8 7V5a1 1 0 0 1 1-1h6a1 1 0 0 1 1 1v2" />
+                    ),
+                    title: 'Stock Permanente',
+                    desc:  'Disponibilidad para abastecer tu operación.',
+                  },
+                  {
+                    icon: (
+                      <path strokeLinecap="round" strokeLinejoin="round" d="M1 3h13l3 5v5H1V3zM16 13h4l2 3v2h-2m-4 0H7m10 0a2 2 0 1 1-4 0 2 2 0 0 1 4 0zM5 18a2 2 0 1 1-4 0 2 2 0 0 1 4 0z" />
+                    ),
+                    title: 'Entrega Ágil',
+                    desc:  'Repartos diarios, logística eficiente.',
+                  },
+                  {
+                    icon: (
+                      <path strokeLinecap="round" strokeLinejoin="round" d="M17 20h5v-1a4 4 0 0 0-5.5-3.7M9 20H4v-1a4 4 0 0 1 5.5-3.7M15 7a4 4 0 1 1-8 0 4 4 0 0 1 8 0zm6 13v-1a4 4 0 0 0-3-3.87M3 20v-1a4 4 0 0 1 3-3.87" />
+                    ),
+                    title: 'Atención Directa',
+                    desc:  'Un equipo que entiende y acompaña tu necesidad.',
+                  },
+                ].map((item) => (
+                  <div key={item.title} className="flex items-start gap-3">
+                    <div className="flex-shrink-0 w-9 h-9 rounded flex items-center justify-center" style={{ background: 'rgba(255,255,255,0.15)' }}>
+                      <svg className="w-[18px] h-[18px]" viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth={1.8}>
+                        {item.icon}
+                      </svg>
+                    </div>
+                    <div>
+                      <div className="text-[11px] font-bold uppercase tracking-[.15em] text-white mb-0.5">
+                        {item.title}
+                      </div>
+                      <p className="text-[13px] leading-relaxed" style={{ color: 'rgba(255,255,255,0.75)' }}>
+                        {item.desc}
+                      </p>
+                    </div>
+                  </div>
+                ))}
+              </div>
             </div>
 
             <a
@@ -217,6 +250,7 @@ export default function Logistica() {
                 <path d="M5 12h14M12 5l7 7-7 7" />
               </svg>
             </a>
+            </div>
           </div>
 
         </div>

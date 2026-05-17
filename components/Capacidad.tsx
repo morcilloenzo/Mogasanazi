@@ -108,7 +108,7 @@ export default function Capacidad() {
                 style={{ aspectRatio: '16/9', background: '#E5E9F0' }}
               >
                 <Image
-                  src="/images/1.png"
+                  src="/images/4.png"
                   alt="Camión MOGASA"
                   fill
                   className="object-cover"
@@ -120,7 +120,7 @@ export default function Capacidad() {
                 style={{ aspectRatio: '4/3', background: '#E5E9F0' }}
               >
                 <Image
-                  src="/images/3.png"
+                  src="/images/1.png"
                   alt="Depósito MOGASA"
                   fill
                   className="object-cover"
@@ -132,7 +132,7 @@ export default function Capacidad() {
                 style={{ aspectRatio: '4/3', background: '#E5E9F0' }}
               >
                 <Image
-                  src="/images/2.png"
+                  src="/images/5.png"
                   alt="Autoelevador MOGASA"
                   fill
                   className="object-cover"

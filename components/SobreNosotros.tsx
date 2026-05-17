@@ -38,7 +38,7 @@ export default function SobreNosotros() {
             style={{ opacity: left.visible ? 1 : 0, transform: left.visible ? 'none' : 'translateY(40px)', transition: 'all .7s ease' }}
           >
             <div className="w-full relative overflow-hidden" style={{ aspectRatio: '3/4' }}>
-              <Image src="/images/4.png" alt="MOGASA" fill className="object-cover" />
+              <Image src="/images/frente.png" alt="MOGASA" fill className="object-cover" />
             </div>
             {/* Badge de años */}
             <div
