@@ -59,8 +59,8 @@ function ProductCard({ p, tall }: { p: Product; tall: boolean }) {
     <div
       className={`prod-card relative overflow-hidden cursor-pointer group ${
         tall
-          ? 'min-h-[340px] sm:min-h-[460px] lg:min-h-[540px]'
-          : 'min-h-[240px] sm:min-h-[280px] lg:min-h-[380px]'
+          ? 'min-h-[460px] sm:min-h-[600px] lg:min-h-[700px]'
+          : 'min-h-[320px] sm:min-h-[400px] lg:min-h-[500px]'
       }`}
       style={{ background: 'var(--navy-mid)' }}
     >
@@ -83,7 +83,7 @@ function ProductCard({ p, tall }: { p: Product; tall: boolean }) {
 
       <div
         className="absolute inset-0 z-10"
-        style={{ background: 'linear-gradient(to top, rgba(6,15,30,0.97) 0%, rgba(6,15,30,0.55) 55%, rgba(6,15,30,0.1) 100%)' }}
+        style={{ background: 'linear-gradient(to top, rgba(6,15,30,0.82) 0%, rgba(6,15,30,0.35) 50%, rgba(6,15,30,0.05) 100%)' }}
       />
 
       <div

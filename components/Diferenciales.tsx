@@ -6,22 +6,22 @@ const items = [
   {
     num:   '01',
     title: 'Producción Industrial',
-    desc:  'Planta propia con capacidad para abastecer grandes volúmenes durante la temporada. No dependemos de terceros para cumplir.',
+    desc:  'Planta propia con capacidad para abastecer grandes volúmenes durante la temporada.',
   },
   {
     num:   '02',
-    title: 'Respuesta en 48 horas',
+    title: 'Soluciones Rápidas',
     desc:  'Stock permanente y logística eficiente. Entregas diarias en todo el Alto Valle, Valle Medio y Neuquén.',
   },
   {
     num:   '03',
     title: 'Calidad Certificada',
-    desc:  'Materiales certificados para exportación. Nuestro packaging cumple las exigencias de mercados internacionales.',
+    desc:  'Materiales certificados para exportación. Nuestros insumos cumplen las exigencias de mercados internacionales.',
   },
   {
     num:   '04',
     title: 'Atención Directa',
-    desc:  'Comerciales propios en la región. Conocemos cada operación y respondemos sin intermediarios.',
+    desc:  'Canales de comunicación abiertos para una respuesta rápida y un acompañamiento de calidad a todos nuestros clientes.',
   },
 ]
 

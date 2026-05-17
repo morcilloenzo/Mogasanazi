@@ -103,7 +103,7 @@ body {
 /* Logo slider */
 @keyframes marquee {
   from { transform: translateX(0); }
-  to   { transform: translateX(-50%); }
+  to   { transform: translateX(-33.333%); }
 }
 .marquee-track {
   animation: marquee 28s linear infinite;

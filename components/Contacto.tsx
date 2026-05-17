@@ -86,26 +86,32 @@ export default function Contacto() {
             {[
               {
                 icon: (
-                  <path fillRule="evenodd" clipRule="evenodd" d="M12 2a8 8 0 0 0-8 8c0 5.4 6.7 11.2 7.4 11.7a1 1 0 0 0 1.2 0C13.3 21.2 20 15.4 20 10a8 8 0 0 0-8-8Zm0 11a3 3 0 1 1 0-6 3 3 0 0 1 0 6Z" />
+                  <>
+                    <path strokeLinecap="round" strokeLinejoin="round" d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7z" />
+                    <circle cx="12" cy="9" r="2.5" strokeLinecap="round" strokeLinejoin="round" />
+                  </>
                 ),
-                label: 'Ubicación', value: 'Alto Valle de Río Negro\nPatagonia Argentina',
+                label: 'Ubicación', value: 'España 650, General Roca - Río Negro',
               },
               {
                 icon: (
-                  <path d="M6.62 10.79a15.05 15.05 0 0 0 6.59 6.59l2.2-2.2a1 1 0 0 1 1.02-.24c1.12.37 2.33.57 3.57.57a1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A17 17 0 0 1 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1c0 1.25.2 2.45.57 3.57a1 1 0 0 1-.25 1.02l-2.2 2.2Z" />
+                  <path strokeLinecap="round" strokeLinejoin="round" d="M3 5.5A1.5 1.5 0 0 1 4.5 4h2.26a1 1 0 0 1 .95.68l1 3a1 1 0 0 1-.29 1.06L7.1 9.93a11.07 11.07 0 0 0 4.97 4.97l1.2-1.37a1 1 0 0 1 1.05-.29l3 1a1 1 0 0 1 .68.95V19.5A1.5 1.5 0 0 1 16.5 21C9.044 21 3 14.956 3 7.5v-2z" />
                 ),
                 label: 'Teléfono', value: '+54 (0299) 000-0000',
               },
               {
                 icon: (
-                  <path fillRule="evenodd" clipRule="evenodd" d="M3.4 5.07A2 2 0 0 1 5 4.5h14a2 2 0 0 1 1.6.57L12 11.27 3.4 5.07ZM3 7.06v10.94a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V7.06l-8.42 6.06a1 1 0 0 1-1.16 0L3 7.06Z" />
+                  <>
+                    <rect x="2" y="4" width="20" height="16" rx="2" strokeLinecap="round" strokeLinejoin="round" />
+                    <path strokeLinecap="round" strokeLinejoin="round" d="m2 7 10 7 10-7" />
+                  </>
                 ),
                 label: 'Email', value: 'ventas@mogasa.com.ar',
               },
             ].map((item) => (
               <div key={item.label} className="flex items-start gap-4">
-                <div className="w-12 h-12 flex items-center justify-center flex-shrink-0" style={{ background: 'var(--navy)' }}>
-                  <svg className="w-[22px] h-[22px]" viewBox="0 0 24 24" fill="currentColor" style={{ color: 'var(--green)' }}>
+                <div className="w-11 h-11 rounded-full flex items-center justify-center flex-shrink-0" style={{ background: 'rgba(34,166,82,0.12)' }}>
+                  <svg className="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={1.8} style={{ color: 'var(--green)' }}>
                     {item.icon}
                   </svg>
                 </div>

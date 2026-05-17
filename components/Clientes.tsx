@@ -45,7 +45,7 @@ export function Clientes() {
         <div className="pointer-events-none absolute inset-y-0 right-0 z-10 w-16 bg-gradient-to-l from-white to-transparent md:w-32" />
 
         <div className="marquee-track flex w-max py-3">
-          {[...logos, ...logos].map((logo, i) => (
+          {[...logos, ...logos, ...logos].map((logo, i) => (
             <div
               key={i}
               title={logo.alt}
@@ -98,7 +98,7 @@ export function Testimonio() {
           className="text-white uppercase leading-[1.1] mb-8"
           style={{ fontFamily: 'var(--font-display)', fontWeight: 700, fontSize: 'clamp(22px,4vw,40px)' }}
         >
-          Cuando empieza la temporada, la capacidad industrial no puede fallar. Nosotros nos aseguramos de que no falle.
+          Cuando empieza la temporada, el abastecimiento no puede fallar. Nosotros nos aseguramos de que no falle.
         </div>
         <div className="text-[13px] uppercase tracking-[.15em]" style={{ color: 'var(--green)' }}>
           MOGASA — Alto Valle, Patagonia Argentina
