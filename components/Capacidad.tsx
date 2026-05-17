@@ -36,7 +36,7 @@ export default function Capacidad() {
             </h2>
 
             <p className="mt-6 max-w-md text-base leading-relaxed text-gray-600 md:text-lg">
-              Acompañamos a quienes impulsan la producción frutícola, brindando soluciones de packaging confiables para cada etapa de la temporada. Sabemos que en cada cosecha la continuidad y la respuesta rápida hacen la difernecia. Por eso combinamos capacidad industrial, personalización y flexibilidad para adaptarnos a las necesidades de cada operación.
+              Acompañamos a quienes impulsan la producción frutícola, brindando soluciones de packaging confiables para cada etapa de la temporada. Sabemos que en cada cosecha la continuidad y la respuesta rápida hacen la diferencia. Por eso combinamos capacidad industrial, personalización y flexibilidad para adaptarnos a las necesidades de cada operación.
             </p>
 
             <div className="mt-8">

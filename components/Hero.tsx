@@ -39,9 +39,9 @@ export default function Hero() {
           className="text-white uppercase leading-[.95] tracking-tight mb-5 sm:mb-7 max-w-[900px] fade-up fade-up-delay-1"
           style={{ fontFamily: 'var(--font-display)', fontWeight: 900, fontSize: 'clamp(36px, 7vw, 96px)' }}
         >
-          Soluciones de Packaging<br />
-          <span style={{ color: 'var(--green)' }}>para quienes impulsan la</span><br />
-          fruta Argentina
+          Soluciones de Embalaje<br />
+          <span style={{ color: 'var(--green)' }}>para quienes impulsan</span><br />
+          la fruta Argentina
         </h1>
 
         <p

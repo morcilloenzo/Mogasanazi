@@ -111,9 +111,6 @@ export default function MapaReal({
         }).addTo(map)
       })
 
-      const allPoints = L.latLngBounds([mogasaPosition, ...localidadesCoords])
-      map.fitBounds(allPoints, { animate: false, padding: [20, 20] })
-
       leafletMap.current = map
     } else {
       leafletMap.current.setView(active.center, active.zoom, { animate: true })
