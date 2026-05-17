@@ -39,7 +39,7 @@ export const products: Product[] = [
     id:      'soluciones',
     tag:     'Custom · Desarrollo',
     name:    'Impresión personalizada',
-    desc:    'Desarrollamos productos específicos para cada operación. Consultá con nuestro equipo técnico comercial.',
+    desc:    'Desarrollamos impresiones personalizables para cada cliente. Consultá con nuestro equipo técnico comercial.',
     variant: 'green',
   },
 ]

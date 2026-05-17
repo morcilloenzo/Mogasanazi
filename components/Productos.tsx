@@ -49,7 +49,7 @@ const bottomProducts = [
     img:  '/images/products/sulfito.jpg',
     tag:  'Custom · Marca propia',
     name: 'Impresión Personalizada',
-    desc: 'Desarrollamos productos específicos para cada operación. Consultá con nuestro equipo técnico comercial.',
+    desc: 'Desarrollamos impresiones personalizables para cada cliente. Consultá con nuestro equipo técnico comercial.',
   },
 ]
 
