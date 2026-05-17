@@ -62,7 +62,7 @@ export default function Logistica() {
               color:      '#fff',
             }}
           >
-            Cerca de quienes<br />nos necesitan
+            Cerca de quienes nos necesitan
           </h2>
           <p className="text-[17px] leading-7 font-light max-w-xl" style={{ color: 'rgba(255,255,255,0.6)' }}>
             Estamos cerca de las principales zonas productivas para responder rápido cuando cada temporada lo exige.

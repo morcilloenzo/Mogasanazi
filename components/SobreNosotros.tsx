@@ -5,20 +5,20 @@ import { useReveal } from '@/hooks/useReveal'
 
 const pilares = [
   {
-    title: 'Capacidad operativa real',
-    desc:  'Producción propia con flexibilidad para grandes volúmenes y picos de temporada.',
+    title: 'Producción Industrial',
+    desc:  'Conversión propia de papel con capacidad de adaptación para distintos formatos, volúmenes y necesidades operativas.',
   },
   {
     title: 'Logística regional eficiente',
-    desc:  'Conocemos los tiempos, las rutas y las exigencias del sector frutícola patagónico.',
+    desc:  'Cobertura estratégica en Alto Valle, Valle Medio, Neuquén y zonas productivas de la Patagonia.',
   },
   {
     title: 'Abastecimiento en temporada',
-    desc:  'Planificación anticipada con cada cliente para garantizar continuidad sin cortes.',
+    desc:  'Planificación y abastecimiento pensado para sostener operaciones activas durante los períodos de mayor demanda.',
   },
   {
-    title: 'Respuesta directa',
-    desc:  'Comerciales propios en la región, sin intermediarios, con decisión inmediata.',
+    title: 'Atención directa',
+    desc:  'Relación cercana, respuesta rápida y seguimiento comercial sin intermediarios.',
   },
 ]
 
@@ -75,13 +75,11 @@ export default function SobreNosotros() {
               en temporada.
             </div>
 
-            <p className="text-[15px] leading-[1.8] mb-10 font-light" style={{ color: 'rgba(255,255,255,0.6)' }}>
-              MOGASA es una empresa industrial que acompaña a productores del sector fruticula brindando
-              soluciones de packaging confiables para cada etapa de la temporada.
-              Sabemos que en cada cosecha la continuidad y la respuesta rapida hacen la diferencia. Por  eso 
-              Combinamos capacidad industrial, personalización y flexibilidad para adaptarnos a las necesidades 
-              de cada operación.
-            </p>
+            <div className="flex flex-col gap-5 mb-10 text-[15px] leading-[1.8] font-light" style={{ color: 'rgba(255,255,255,0.6)' }}>
+              <p>MOGASA acompaña a productores y galpones de empaque del sector fruticola con soluciones de embalaje industrial desarrolladas para responder rápido, adaptarse a cada necesidad y sostener la continuidad operativa en los momentos de mayor exigencia.</p>
+              <p>Fabricamos papel corrugado, papel seda y todo tipo soluciones para embalaje con foco en abastecimiento regional, flexibilidad productiva y atención directa. Entendemos la dinámica de la temporada porque trabajamos cerca de las zonas productivas y conocemos los tiempos que exige la industria frutícola.</p>
+              <p>Nuestra estructura operativa nos permite responder con agilidad ante picos de demanda, entregas urgentes y necesidades específicas de cada cliente.</p>
+            </div>
 
             <div className="flex flex-col gap-4">
               {pilares.map((p) => (

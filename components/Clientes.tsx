@@ -30,7 +30,7 @@ export function Clientes() {
           className="uppercase leading-[.95] mb-4"
           style={{ fontFamily: 'var(--font-display)', fontWeight: 900, fontSize: 'clamp(36px,5vw,64px)', color: 'var(--navy)' }}
         >
-          Empresas que confían<br /> en MOGASA
+          Empresas que confían en MOGASA
         </h2>
         <p className="text-[17px] leading-7 font-light max-w-lg" style={{ color: '#4A5568' }}>
           Acompañamos a productores y empaques frutícolas del Alto Valle, Valle Medio y la región patagónica.
@@ -98,7 +98,7 @@ export function Testimonio() {
           className="text-white uppercase leading-[1.1] mb-8"
           style={{ fontFamily: 'var(--font-display)', fontWeight: 700, fontSize: 'clamp(22px,4vw,40px)' }}
         >
-          Cuando empieza la temporada, el abastecimiento no puede fallar. Nosotros nos aseguramos de que no falle.
+          Producción y abastecimiento para operaciones que no pueden detenerse.
         </div>
         <div className="text-[13px] uppercase tracking-[.15em]" style={{ color: 'var(--green)' }}>
           MOGASA — General Roca, Río Negro - Argentina

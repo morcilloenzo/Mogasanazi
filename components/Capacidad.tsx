@@ -11,9 +11,10 @@ export default function Capacidad() {
     <section id="capacidad" className="tex-overlay py-16 md:py-24" style={{ background: '#F7F8FA' }}>
       <div className="max-w-[1400px] mx-auto px-[4vw]">
 
-        <p className="mb-6 text-xs font-bold uppercase tracking-[0.22em] text-green">
-          Nuestra Planta
-        </p>
+        <div className="flex items-center gap-2.5 mb-6">
+          <span className="block w-8 h-0.5" style={{ background: 'var(--green)' }} />
+          <span className="text-[12px] font-semibold uppercase tracking-[.2em]" style={{ color: 'var(--green)' }}>Nuestra Planta</span>
+        </div>
 
         <div className="grid items-center gap-10 lg:grid-cols-12 lg:gap-14">
 

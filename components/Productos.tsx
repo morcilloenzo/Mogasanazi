@@ -142,12 +142,12 @@ export default function Productos() {
               className="uppercase leading-[.95]"
               style={{ fontFamily: 'var(--font-display)', fontWeight: 900, fontSize: 'clamp(36px,5vw,64px)', color: 'var(--navy)' }}
             >
-              Nuestros<br />Productos
+              Nuestros Productos
             </h2>
+            <p className="text-[17px] leading-7 font-light mt-4" style={{ color: '#4A5568' }}>
+              Fabricación propia y soluciones a medida<br />para cada etapa del proceso de embalaje frutícola.
+            </p>
           </div>
-          <p className="text-[17px] leading-7 font-light max-w-sm" style={{ color: '#4A5568' }}>
-            Fabricación propia y soluciones a medida para cada etapa del proceso de embalaje frutícola e industrial.
-          </p>
         </div>
       </div>
 

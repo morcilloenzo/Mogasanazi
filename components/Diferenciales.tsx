@@ -47,7 +47,7 @@ export default function Diferenciales() {
             className="uppercase leading-[.95]"
             style={{ fontFamily: 'var(--font-display)', fontWeight: 900, fontSize: 'clamp(36px,5vw,64px)', color: 'var(--navy)' }}
           >
-            La diferencia<br />que sostiene<br />tu operación
+            La diferencia que sostiene tu operación
           </h2>
         </div>
 
