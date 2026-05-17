@@ -101,7 +101,7 @@ function ProductCard({ p, tall }: { p: Product; tall: boolean }) {
         >
           {p.name}
         </div>
-        <p className="prod-desc text-[13px] leading-relaxed font-light" style={{ color: 'rgba(255,255,255,0.6)' }}>
+        <p className="prod-desc hidden sm:block text-[13px] leading-relaxed font-light" style={{ color: 'rgba(255,255,255,0.6)' }}>
           {p.desc}
         </p>
         <a

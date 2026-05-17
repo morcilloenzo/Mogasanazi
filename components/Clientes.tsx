@@ -101,7 +101,7 @@ export function Testimonio() {
           Cuando empieza la temporada, el abastecimiento no puede fallar. Nosotros nos aseguramos de que no falle.
         </div>
         <div className="text-[13px] uppercase tracking-[.15em]" style={{ color: 'var(--green)' }}>
-          MOGASA — Alto Valle, Patagonia Argentina
+          MOGASA — General Roca, Río Negro - Argentina
         </div>
       </div>
     </section>
