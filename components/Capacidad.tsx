@@ -40,32 +40,6 @@ export default function Capacidad() {
               Acompañamos a quienes impulsan la producción frutícola, brindando soluciones de packaging confiables para cada etapa de la temporada. Sabemos que en cada cosecha la continuidad y la respuesta rápida hacen la diferencia. Por eso combinamos capacidad industrial, personalización y flexibilidad para adaptarnos a las necesidades de cada operación.
             </p>
 
-            <div className="mt-8">
-              <a
-                href="#contacto"
-                className="inline-flex items-center justify-center gap-2 border border-navy px-6 py-3
-                  text-sm font-semibold text-navy no-underline transition-all duration-300
-                  hover:bg-navy hover:text-white"
-              >
-                Conocé nuestra planta
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  width="16"
-                  height="16"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  stroke="currentColor"
-                  strokeWidth="2.4"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  aria-hidden="true"
-                >
-                  <path d="M5 12h14" />
-                  <path d="m12 5 7 7-7 7" />
-                </svg>
-              </a>
-            </div>
-
             {/* Stats */}
             <div className="mt-10 grid grid-cols-2 gap-4 border-t border-[#D0D6E0] pt-8">
               <div>
