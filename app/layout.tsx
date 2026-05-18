@@ -15,6 +15,23 @@ export const metadata: Metadata = {
   },
 }
 
+const localBusinessSchema = {
+  "@context": "https://schema.org",
+  "@type": "LocalBusiness",
+  "name": "MOGASA",
+  "description": "Fabricación de papel corrugado, papel seda e insumos para embalaje de fruta.",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "España 650",
+    "addressLocality": "General Roca",
+    "addressRegion": "Río Negro",
+    "addressCountry": "AR"
+  },
+  "telephone": "+542984400010",
+  "openingHours": ["Mo-Fr 08:00-18:00", "Sa 08:00-13:00"],
+  "url": "https://glowing-gingersnap-7c20fe.netlify.app"
+}
+
 export default function RootLayout({
   children,
 }: {
@@ -22,6 +39,12 @@ export default function RootLayout({
 }) {
   return (
     <html lang="es">
+      <head>
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(localBusinessSchema) }}
+        />
+      </head>
       <body>{children}</body>
     </html>
   )

@@ -104,13 +104,6 @@ function ProductCard({ p, tall }: { p: Product; tall: boolean }) {
         <p className="prod-desc hidden sm:block text-[13px] leading-relaxed font-light" style={{ color: 'rgba(255,255,255,0.6)' }}>
           {p.desc}
         </p>
-        <a
-          href="#contacto"
-          className="prod-link inline-flex items-center gap-1.5 text-[11px] font-semibold uppercase tracking-[.12em] mt-3 no-underline"
-          style={{ color: 'var(--green)' }}
-        >
-          Ver especificaciones →
-        </a>
       </div>
     </div>
   )
@@ -147,6 +140,13 @@ export default function Productos() {
             <p className="text-[17px] leading-7 font-light mt-4" style={{ color: '#4A5568' }}>
               Fabricación propia y soluciones a medida<br />para cada etapa del proceso de embalaje frutícola.
             </p>
+            <a
+              href="#contacto"
+              className="inline-flex items-center gap-2 mt-6 px-6 py-3 text-[12px] font-bold uppercase tracking-[.14em] no-underline transition-all duration-200 hover:brightness-110"
+              style={{ background: 'var(--green)', color: '#fff' }}
+            >
+              Solicitar Cotización →
+            </a>
           </div>
         </div>
       </div>
