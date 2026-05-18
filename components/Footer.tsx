@@ -1,7 +1,7 @@
 const productLinks = [
   'Papel Sulfito / Seda',
   'Corrugado Kraft',
-  'Rollos Corrugados',
+  'Rollos de Corrugado',
   'Film Stretch',
   'Esquineros',
   'Soluciones a Medida',
@@ -15,7 +15,7 @@ const empresaLinks = [
 ]
 const contactLinks = [
   { label: 'ventas@mogasa.com.ar',    href: 'mailto:ventas@mogasa.com.ar' },
-  { label: '+54 (0299) 000-0000',     href: 'tel:+5429900000000' },
+  { label: '+54 298 440-0010',     href: 'tel:+542984400010' },
   { label: 'Solicitar Cotización',    href: '#contacto' },
   { label: 'WhatsApp Comercial',      href: 'https://wa.me/549299000000' },
 ]
@@ -37,17 +37,8 @@ export default function Footer() {
         {/* Top grid */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-12 mb-12">
           {/* Brand */}
-          <div>
-            <div
-              className="mb-3"
-              style={{ fontFamily: 'var(--font-display)', fontWeight: 900, fontSize: 26, letterSpacing: '.15em', color: '#fff', textTransform: 'uppercase' }}
-            >
-              MOGASA
-            </div>
-            <p style={{ fontSize: 13, lineHeight: 1.7, color: 'rgba(255,255,255,0.4)', maxWidth: 280 }}>
-              Soluciones industriales de embalaje para la fruticultura y la agroindustria patagónica.
-              Alto Valle, Río Negro, Neuquén y Patagonia Argentina.
-            </p>
+          <div style={{ textAlign: 'left' }}>
+            <img src="/images/logo.png" alt="Mogasa" style={{ height: 185, marginBottom: 12, display: 'inline-block' }} />
           </div>
 
           {/* Productos */}
@@ -87,7 +78,7 @@ export default function Footer() {
           </div>
           <div className="flex items-center gap-2" style={{ fontSize: 12, color: 'rgba(255,255,255,0.25)' }}>
             <div style={{ width: 6, height: 6, background: '#22A652', borderRadius: '50%' }} />
-            Alto Valle · Río Negro · Neuquén · Patagonia Argentina
+            General Roca - Rio Negro, Argentina.
           </div>
         </div>
       </div>

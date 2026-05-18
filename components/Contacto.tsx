@@ -1,15 +1,16 @@
 'use client'
 
 import { useState } from 'react'
+import emailjs from '@emailjs/browser'
 import { useReveal } from '@/hooks/useReveal'
 
 const productos = [
-  'Papel Sulfito / Seda',
-  'Papel Corrugado Kraft',
-  'Rollos Corrugados',
+  'Papel Seda',
+  'Papel Corrugado',
+  'Rollos de Corrugado',
   'Film Stretch',
   'Esquineros de Cartón',
-  'Soluciones a Medida',
+  'Impresión Personalizada',
 ]
 
 export default function Contacto() {
@@ -20,6 +21,8 @@ export default function Contacto() {
     empresa: '', nombre: '', email: '', telefono: '', producto: '', consulta: '',
   })
   const [sent, setSent] = useState(false)
+  const [sending, setSending] = useState(false)
+  const [sendError, setSendError] = useState('')
   const [errors, setErrors] = useState<Record<string, boolean>>({})
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
@@ -27,12 +30,35 @@ export default function Contacto() {
     setErrors(prev => ({ ...prev, [e.target.name]: false }))
   }
 
-  const handleSubmit = () => {
+  const handleSubmit = async () => {
     const required = ['empresa', 'nombre', 'email', 'telefono', 'consulta']
     const newErrors: Record<string, boolean> = {}
     required.forEach(k => { if (!fields[k as keyof typeof fields].trim()) newErrors[k] = true })
     if (Object.keys(newErrors).length) { setErrors(newErrors); return }
-    setSent(true)
+
+    setSending(true)
+    setSendError('')
+    try {
+      await emailjs.send(
+        'service_vx6u554',
+        'template_131xl7c',
+        {
+          empresa:  fields.empresa,
+          nombre:   fields.nombre,
+          email:    fields.email,
+          telefono: fields.telefono,
+          producto: fields.producto || 'No especificado',
+          consulta: fields.consulta,
+        },
+        '9ir93Q8UZA0J0pG0Y'
+      )
+      setSent(true)
+    } catch (err: unknown) {
+      const msg = err instanceof Error ? err.message : JSON.stringify(err)
+      setSendError(msg)
+    } finally {
+      setSending(false)
+    }
   }
 
   const inputStyle = (name: string): React.CSSProperties => ({
@@ -97,7 +123,7 @@ export default function Contacto() {
                 icon: (
                   <path strokeLinecap="round" strokeLinejoin="round" d="M3 5.5A1.5 1.5 0 0 1 4.5 4h2.26a1 1 0 0 1 .95.68l1 3a1 1 0 0 1-.29 1.06L7.1 9.93a11.07 11.07 0 0 0 4.97 4.97l1.2-1.37a1 1 0 0 1 1.05-.29l3 1a1 1 0 0 1 .68.95V19.5A1.5 1.5 0 0 1 16.5 21C9.044 21 3 14.956 3 7.5v-2z" />
                 ),
-                label: 'Teléfono', value: '+54 (0299) 000-0000',
+                label: 'Teléfono', value: '+54 298 440-0010',
               },
               {
                 icon: (
@@ -195,13 +221,21 @@ export default function Contacto() {
             </div>
 
             {!sent ? (
-              <button
-                onClick={handleSubmit}
-                className="w-full text-white transition-colors hover:opacity-90"
-                style={{ background: 'var(--navy)', padding: '16px 36px', fontFamily: 'var(--font-display)', fontSize: 16, fontWeight: 700, letterSpacing: '.1em', textTransform: 'uppercase', border: 'none', cursor: 'pointer' }}
-              >
-                Enviar Solicitud
-              </button>
+              <>
+                <button
+                  onClick={handleSubmit}
+                  disabled={sending}
+                  className="w-full text-white transition-colors hover:opacity-90"
+                  style={{ background: 'var(--navy)', padding: '16px 36px', fontFamily: 'var(--font-display)', fontSize: 16, fontWeight: 700, letterSpacing: '.1em', textTransform: 'uppercase', border: 'none', cursor: sending ? 'not-allowed' : 'pointer', opacity: sending ? 0.7 : 1 }}
+                >
+                  {sending ? 'Enviando...' : 'Enviar Solicitud'}
+                </button>
+                {sendError && (
+                  <div style={{ marginTop: 12, padding: 12, background: '#fff0f0', borderLeft: '3px solid #e24b4a', fontSize: 13, color: '#c0392b' }}>
+                    Error: {sendError}
+                  </div>
+                )}
+              </>
             ) : (
               <div style={{ padding: 16, background: '#e8f8ef', borderLeft: '3px solid var(--green)' }}>
                 <div style={{ fontSize: 14, fontWeight: 600, color: 'var(--green-dark)' }}>✓ Mensaje enviado correctamente</div>

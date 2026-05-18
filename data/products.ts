@@ -12,7 +12,7 @@ export const products: Product[] = [
   {
     id:    'rollos-corrugados',
     tag:   'A medida',
-    name:  'Rollos Corrugados',
+    name:  'Rollos de Corrugado',
     desc:  'Bobinas de corrugado simple faz para interfoliado y protección. Ancho y diámetro personalizable según requerimiento operativo.',
     tall:  true,
   },
@@ -20,13 +20,13 @@ export const products: Product[] = [
     id:    'papel-corrugado',
     tag:   'Kraft · Violeta',
     name:  'Papel Corrugado',
-    desc:  'Planchas de cartón corrugado de alta resistencia para embalaje industrial. Múltiples capas y gramajes.',
+    desc:  'Planchas de cartón corrugado de alta resistencia para embalaje. Ancho y diámetro personalizable.',
   },
   {
     id:    'papel-sulfito',
     tag:   'Papel · Embalaje',
     name:  'Papel Seda',
-    desc:  'Papel de envoltura premium para fruticultura. Gramajes 18–40 g/m². Ideal para exportación.',
+    desc:  'Papel de envoltura premium para fruticultura. Ideal para exportación.',
     badge: 'Premium',
   },
   {

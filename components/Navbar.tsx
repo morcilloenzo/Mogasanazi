@@ -65,18 +65,8 @@ export default function Navbar() {
           ${scrolled ? 'bg-[rgba(6,15,30,0.92)] backdrop-blur-md' : 'bg-transparent'}`}
       >
         {/* Logo */}
-        <a href="#" className="flex items-center gap-2.5 no-underline">
-          <div className="w-9 h-9 flex items-center justify-center" style={{ background: 'var(--green)' }}>
-            <svg className="w-5 h-5 fill-white" viewBox="0 0 24 24">
-              <path d="M4 4h16v4H4zM4 10h10v4H4zM4 16h16v4H4z"/>
-            </svg>
-          </div>
-          <span
-            className="text-white text-[22px] font-black uppercase tracking-[.12em]"
-            style={{ fontFamily: 'var(--font-display)' }}
-          >
-            MOGASA
-          </span>
+        <a href="#" className="flex items-center no-underline">
+          <img src="/images/logo.png" alt="Mogasa" style={{ height: 155 }} />
         </a>
 
         {/* Desktop links */}

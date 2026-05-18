@@ -33,7 +33,7 @@ export function Clientes() {
           Empresas que confían en MOGASA
         </h2>
         <p className="text-[17px] leading-7 font-light max-w-lg" style={{ color: '#4A5568' }}>
-          Acompañamos a productores y empaques frutícolas del Alto Valle, Valle Medio y la región patagónica.
+          Acompañamos a productores y galpones de empaque del Alto Valle, Valle Medio y la región patagónica.
         </p>
       </div>
 
