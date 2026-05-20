@@ -1,8 +1,10 @@
 'use client'
 
 import { useState, useEffect } from 'react'
+import { usePathname } from 'next/navigation'
 
 const links = [
+  { href: '/',           label: 'Inicio' },
   { href: '#productos',  label: 'Productos' },
   { href: '#nosotros',   label: 'Nosotros' },
   { href: '#capacidad',  label: 'Capacidad' },
@@ -11,8 +13,16 @@ const links = [
 ]
 
 export default function Navbar() {
+  const pathname = usePathname()
   const [scrolled,    setScrolled]    = useState(false)
   const [mobileOpen,  setMobileOpen]  = useState(false)
+
+  const handleInicio = (e: React.MouseEvent<HTMLAnchorElement>) => {
+    if (pathname === '/') {
+      e.preventDefault()
+      window.scrollTo({ top: 0, behavior: 'smooth' })
+    }
+  }
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 60)
@@ -48,8 +58,8 @@ export default function Navbar() {
         {links.map(l => (
           <a
             key={l.href}
-            href={l.href}
-            onClick={closeMobile}
+            href={l.href.startsWith('#') && pathname !== '/' ? `/${l.href}` : l.href}
+            onClick={l.label === 'Inicio' ? (e) => { handleInicio(e); closeMobile() } : closeMobile}
             className="font-display text-4xl font-black uppercase tracking-wider text-white hover:text-green transition-colors"
             style={{ fontFamily: 'var(--font-display)' }}
           >
@@ -65,7 +75,7 @@ export default function Navbar() {
           ${scrolled ? 'bg-[rgba(6,15,30,0.92)] backdrop-blur-md' : 'bg-transparent'}`}
       >
         {/* Logo */}
-        <a href="#" className="flex items-center no-underline">
+        <a href="/" onClick={handleInicio} className="flex items-center no-underline">
           <img src="/images/logo.png" alt="Mogasa" style={{ height: 155 }} />
         </a>
 
@@ -74,7 +84,8 @@ export default function Navbar() {
           {links.map(l => (
             <li key={l.href}>
               <a
-                href={l.href}
+                href={l.href.startsWith('#') && pathname !== '/' ? `/${l.href}` : l.href}
+                onClick={l.label === 'Inicio' ? handleInicio : undefined}
                 className="text-[rgba(255,255,255,0.75)] hover:text-white text-[13px] font-medium
                   tracking-[.08em] uppercase no-underline transition-colors"
               >
@@ -86,7 +97,7 @@ export default function Navbar() {
 
         {/* CTA */}
         <a
-          href="#contacto"
+          href={pathname !== '/' ? '/#contacto' : '#contacto'}
           className="hidden md:inline-flex items-center px-[22px] py-[10px]
             text-white text-[14px] font-bold uppercase tracking-[.1em] no-underline
             transition-colors hover:opacity-90"

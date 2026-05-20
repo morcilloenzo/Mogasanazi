@@ -63,8 +63,11 @@ export default function MapaReal({
   zonaActiva: string | null
   revealed:   boolean
 }) {
-  const mapRef     = useRef<HTMLDivElement | null>(null)
-  const leafletMap = useRef<L.Map | null>(null)
+  const mapRef       = useRef<HTMLDivElement | null>(null)
+  const leafletMap   = useRef<L.Map | null>(null)
+  const mogasaMarker = useRef<L.Marker | null>(null)
+
+  const markerSizeForZoom = (zoom: number) => Math.round(32 + (zoom - 8) * 3)
 
   const active = zonaActiva && mapConfig[zonaActiva]
     ? mapConfig[zonaActiva]
@@ -92,14 +95,28 @@ export default function MapaReal({
         attribution: '&copy; OpenStreetMap contributors',
       }).addTo(map)
 
-      const mogasaIcon = L.divIcon({
-        className: 'mogasa-marker-icon',
-        html: '<div class="mogasa-marker"><span>M</span></div>',
-        iconSize: [36, 36],
-        iconAnchor: [18, 18],
-      })
+      const makeIcon = (zoom: number) => {
+        const s = markerSizeForZoom(zoom)
+        const totalH = Math.round(s * 1.5)
+        return L.divIcon({
+          className: 'mogasa-marker-icon',
+          html: `
+            <div style="display:flex;flex-direction:column;align-items:center;filter:drop-shadow(0 2px 6px rgba(0,0,0,0.45))">
+              <div style="width:${s}px;height:${s}px;border-radius:50% 50% 50% 0;transform:rotate(-45deg);background:#22A652;display:flex;align-items:center;justify-content:center;overflow:hidden;box-shadow:inset 0 0 0 2px rgba(255,255,255,0.25)">
+                <img src="/images/geo.png" alt="Mogasa" style="width:${Math.round(s * 2.6)}px;height:${Math.round(s * 2.6)}px;object-fit:contain;transform:rotate(45deg)" />
+              </div>
+            </div>`,
+          iconSize: [s, totalH],
+          iconAnchor: [s / 2, totalH],
+        })
+      }
 
-      L.marker(mogasaPosition, { icon: mogasaIcon }).addTo(map)
+      const marker = L.marker(mogasaPosition, { icon: makeIcon(active.zoom) }).addTo(map)
+      mogasaMarker.current = marker
+
+      map.on('zoomend', () => {
+        marker.setIcon(makeIcon(map.getZoom()))
+      })
 
       localidadesCoords.forEach((coords) => {
         L.circleMarker(coords, {

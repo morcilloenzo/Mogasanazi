@@ -59,8 +59,8 @@ function ProductCard({ p, tall }: { p: Product; tall: boolean }) {
     <div
       className={`prod-card relative overflow-hidden cursor-pointer group ${
         tall
-          ? 'min-h-[460px] sm:min-h-[600px] lg:min-h-[700px]'
-          : 'min-h-[320px] sm:min-h-[400px] lg:min-h-[500px]'
+          ? 'min-h-[220px] sm:min-h-[280px] lg:min-h-[340px]'
+          : 'min-h-[240px] sm:min-h-[300px] lg:min-h-[360px]'
       }`}
       style={{ background: 'var(--navy-mid)' }}
     >
@@ -151,19 +151,31 @@ export default function Productos() {
         </div>
       </div>
 
-      <div className="flex flex-col gap-[2px]">
-        {/* Fila superior — 2 items altos */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 gap-[2px]">
-          {topProducts.map((p) => (
-            <ProductCard key={p.id} p={p} tall />
-          ))}
+      <div className="max-w-[1400px] mx-auto px-[4vw]">
+        <div className="flex flex-col gap-[2px]">
+          {/* Fila superior — 2 items altos */}
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-[2px]">
+            {topProducts.map((p) => (
+              <ProductCard key={p.id} p={p} tall />
+            ))}
+          </div>
+
+          {/* Fila inferior — 3 items visibles (rollos oculto) */}
+          <div className="grid grid-cols-2 lg:grid-cols-3 gap-[2px]">
+            {bottomProducts.filter(p => p.id !== 'rollos').map((p) => (
+              <ProductCard key={p.id} p={p} tall={false} />
+            ))}
+          </div>
         </div>
 
-        {/* Fila inferior — 4 items más bajos */}
-        <div className="grid grid-cols-2 lg:grid-cols-4 gap-[2px]">
-          {bottomProducts.map((p) => (
-            <ProductCard key={p.id} p={p} tall={false} />
-          ))}
+        <div className="flex justify-center mt-10">
+          <a
+            href="/productos"
+            className="inline-flex items-center gap-2 px-8 py-4 text-[12px] font-bold uppercase tracking-[.14em] no-underline border-2 transition-all duration-200 hover:brightness-110"
+            style={{ background: 'var(--navy)', color: '#fff' }}
+          >
+            Ver todos los productos →
+          </a>
         </div>
       </div>
     </section>
