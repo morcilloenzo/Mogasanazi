@@ -16,7 +16,7 @@ const logos = [
 
 export function Clientes() {
   return (
-    <section id="clientes" className="overflow-hidden bg-white py-16 lg:py-20">
+    <section id="clientes" className="tex-overlay overflow-hidden py-16 lg:py-20" style={{ background: '#F7F8FA' }}>
 
       {/* Header */}
       <div className="max-w-[1400px] mx-auto px-[4vw] mb-16">

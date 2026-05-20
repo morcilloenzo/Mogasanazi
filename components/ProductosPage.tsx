@@ -62,7 +62,7 @@ const categories: { title: string; products: Product[] }[] = [
 function ProductCard({ p }: { p: Product }) {
   return (
     <div
-      className="relative overflow-hidden cursor-pointer group min-h-[340px] sm:min-h-[420px]"
+      className="prod-card relative overflow-hidden cursor-pointer group min-h-[240px] sm:min-h-[300px] lg:min-h-[360px]"
       style={{ background: 'var(--navy-mid)' }}
     >
       <Image
@@ -70,7 +70,7 @@ function ProductCard({ p }: { p: Product }) {
         alt={p.name}
         fill
         loading="lazy"
-        className="object-cover transition-transform duration-700 group-hover:scale-105 group-hover:brightness-90"
+        className="object-cover prod-img transition-transform duration-700"
       />
 
       {p.badge && (
@@ -84,7 +84,7 @@ function ProductCard({ p }: { p: Product }) {
 
       <div
         className="absolute inset-0 z-10"
-        style={{ background: 'linear-gradient(to top, rgba(6,15,30,0.85) 0%, rgba(6,15,30,0.35) 55%, rgba(6,15,30,0.05) 100%)' }}
+        style={{ background: 'linear-gradient(to top, rgba(6,15,30,0.82) 0%, rgba(6,15,30,0.35) 50%, rgba(6,15,30,0.05) 100%)' }}
       />
 
       <div className="absolute bottom-0 left-0 right-0 p-6 sm:p-8 z-20">
@@ -92,11 +92,14 @@ function ProductCard({ p }: { p: Product }) {
           {p.tag}
         </div>
         <div
-          className="text-white uppercase leading-[1] mb-3 text-[22px] sm:text-[26px]"
+          className="text-white uppercase leading-[1] mb-2 text-[22px] sm:text-[26px]"
           style={{ fontFamily: 'var(--font-display)', fontWeight: 900, letterSpacing: '.02em' }}
         >
           {p.name}
         </div>
+        <p className="prod-desc hidden sm:block text-[13px] leading-relaxed font-light" style={{ color: 'rgba(255,255,255,0.6)' }}>
+          {p.desc}
+        </p>
       </div>
     </div>
   )
@@ -140,7 +143,7 @@ export default function ProductosPage() {
       {/* Hero */}
       <section
         className="pt-[120px] pb-16 md:pb-20"
-        style={{ background: 'var(--navy-deep, #060f1e)' }}
+        style={{ background: 'var(--navy)' }}
       >
         <div className="max-w-[1400px] mx-auto px-[4vw]">
 <div className="flex items-center gap-2.5 mb-4">
@@ -162,7 +165,7 @@ export default function ProductosPage() {
       </section>
 
       {/* Categorías */}
-      <section className="py-14 md:py-20" style={{ background: '#fff' }}>
+      <section className="tex-overlay py-14 md:py-20" style={{ background: '#F7F8FA' }}>
         <div className="max-w-[1400px] mx-auto px-[4vw]">
           {categories.map((cat) => (
             <CategorySection key={cat.title} title={cat.title} products={cat.products} />

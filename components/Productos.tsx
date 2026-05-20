@@ -10,7 +10,6 @@ const topProducts = [
     tag:   'Kraft · Violeta',
     name:  'Papel Corrugado',
     desc:  'Planchas de cartón corrugado de alta resistencia para embalaje. Ancho y diámetro personalizable.',
-    badge: 'Premium',
   },
   {
     id:    'seda',
@@ -18,7 +17,6 @@ const topProducts = [
     tag:   'Blanco · Verde · Violeta · Negro',
     name:  'Papel Seda',
     desc:  'Papel de envoltura premium para fruticultura. Ideal para exportación.',
-    badge: 'Premium',
   },
 ]
 
@@ -50,10 +48,11 @@ const bottomProducts = [
     tag:  'Custom · Marca propia',
     name: 'Impresión Personalizada',
     desc: 'Desarrollamos impresiones personalizables para cada cliente. Consultá con nuestro equipo técnico comercial.',
+    wide: true,
   },
 ]
 
-type Product = { id: string; img: string; tag: string; name: string; desc: string; badge?: string }
+type Product = { id: string; img: string; tag: string; name: string; desc: string; badge?: string; wide?: boolean }
 function ProductCard({ p, tall }: { p: Product; tall: boolean }) {
   return (
     <div
@@ -61,7 +60,7 @@ function ProductCard({ p, tall }: { p: Product; tall: boolean }) {
         tall
           ? 'min-h-[220px] sm:min-h-[280px] lg:min-h-[340px]'
           : 'min-h-[240px] sm:min-h-[300px] lg:min-h-[360px]'
-      }`}
+      }${p.wide ? ' col-span-2 lg:col-span-1' : ''}`}
       style={{ background: 'var(--navy-mid)' }}
     >
       <Image

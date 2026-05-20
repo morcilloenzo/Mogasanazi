@@ -83,8 +83,8 @@ export default function Capacidad() {
                 style={{ aspectRatio: '16/9', background: '#E5E9F0' }}
               >
                 <Image
-                  src="/images/4.png"
-                  alt="Camión MOGASA"
+                  src="/images/1.png"
+                  alt="Planta MOGASA"
                   fill
                   className="object-cover"
                   sizes="(max-width: 1024px) 100vw, 60vw"
@@ -95,8 +95,8 @@ export default function Capacidad() {
                 style={{ aspectRatio: '4/3', background: '#E5E9F0' }}
               >
                 <Image
-                  src="/images/1.png"
-                  alt="Depósito MOGASA"
+                  src="/images/2.png"
+                  alt="Planta MOGASA"
                   fill
                   className="object-cover"
                   sizes="(max-width: 1024px) 50vw, 30vw"
@@ -107,8 +107,8 @@ export default function Capacidad() {
                 style={{ aspectRatio: '4/3', background: '#E5E9F0' }}
               >
                 <Image
-                  src="/images/5.png"
-                  alt="Autoelevador MOGASA"
+                  src="/images/3.png"
+                  alt="Planta MOGASA"
                   fill
                   className="object-cover"
                   sizes="(max-width: 1024px) 50vw, 30vw"

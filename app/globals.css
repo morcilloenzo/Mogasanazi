@@ -115,8 +115,8 @@ body {
 
 /* Dot pulse */
 @keyframes dot-pulse {
-  0%, 100% { box-shadow: 0 0 0 0 rgba(134,239,172,0.7); }
-  50%       { box-shadow: 0 0 0 6px rgba(134,239,172,0); }
+  0%, 100% { box-shadow: 0 0 0 0 rgba(34,166,82,0.7); }
+  50%       { box-shadow: 0 0 0 6px rgba(34,166,82,0); }
 }
 .dot-pulse {
   animation: dot-pulse 1.8s ease-in-out infinite;

@@ -1,3 +1,5 @@
+import Link from 'next/link'
+
 const productLinks = [
   'Papel Sulfito / Seda',
   'Corrugado Kraft',
@@ -22,7 +24,7 @@ const contactLinks = [
 
 const colTitle: React.CSSProperties = {
   fontSize: 11, fontWeight: 600, letterSpacing: '.2em',
-  textTransform: 'uppercase', color: '#22A652', marginBottom: 20,
+  textTransform: 'uppercase', color: 'var(--green)', marginBottom: 20,
 }
 const linkStyle: React.CSSProperties = {
   fontSize: 13, color: 'rgba(255,255,255,0.45)',
@@ -38,7 +40,7 @@ export default function Footer() {
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-12 mb-12">
           {/* Brand */}
           <div style={{ textAlign: 'left' }}>
-            <img src="/images/logo.png" alt="Mogasa" style={{ height: 185, marginBottom: 12, display: 'inline-block' }} />
+            <Link href="/#"><img src="/images/logo.png" alt="Mogasa" style={{ height: 185, marginBottom: 12, display: 'inline-block' }} /></Link>
           </div>
 
           {/* Productos */}
@@ -77,7 +79,7 @@ export default function Footer() {
             © {new Date().getFullYear()} MOGASA. Todos los derechos reservados.
           </div>
           <div className="flex items-center gap-2" style={{ fontSize: 12, color: 'rgba(255,255,255,0.25)' }}>
-            <div style={{ width: 6, height: 6, background: '#22A652', borderRadius: '50%' }} />
+            <div style={{ width: 6, height: 6, background: 'var(--green)', borderRadius: '50%' }} />
             General Roca - Rio Negro, Argentina.
           </div>
         </div>

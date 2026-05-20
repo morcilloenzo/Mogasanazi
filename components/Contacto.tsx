@@ -84,7 +84,7 @@ export default function Contacto() {
   }
 
   return (
-    <section id="contacto" className="py-16 md:py-24" style={{ background: '#F7F8FA' }}>
+    <section id="contacto" className="tex-overlay py-16 md:py-24" style={{ background: '#F7F8FA' }}>
       <div className="max-w-[1400px] mx-auto px-[4vw]">
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-10 md:gap-16 lg:gap-20 items-start">
@@ -238,7 +238,7 @@ export default function Contacto() {
               </>
             ) : (
               <div style={{ padding: 16, background: '#e8f8ef', borderLeft: '3px solid var(--green)' }}>
-                <div style={{ fontSize: 14, fontWeight: 600, color: 'var(--green-dark)' }}>✓ Mensaje enviado correctamente</div>
+                <div style={{ fontSize: 14, fontWeight: 600, color: 'var(--green)' }}>✓ Mensaje enviado correctamente</div>
                 <div style={{ fontSize: 13, color: '#4A5568', marginTop: 4 }}>Un comercial se pondrá en contacto en menos de 24 horas.</div>
               </div>
             )}

@@ -99,9 +99,9 @@ export default function Logistica() {
                 >
                   <span
                     className="dot-pulse flex-shrink-0 rounded-full"
-                    style={{ width: 8, height: 8, background: '#86efac' }}
+                    style={{ width: 8, height: 8, background: 'var(--green)' }}
                   />
-                  <span className="text-[13px] font-semibold uppercase tracking-[.06em]" style={{ color: '#86efac' }}>
+                  <span className="text-[13px] font-semibold uppercase tracking-[.06em]" style={{ color: 'var(--green)' }}>
                     {z.label}
                   </span>
                 </div>
@@ -170,8 +170,8 @@ export default function Logistica() {
             <div className="flex flex-col gap-7">
               {/* Badge */}
               <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full" style={{ background: 'rgba(0,0,0,0.25)' }}>
-                <span className="dot-pulse w-2 h-2 rounded-full flex-shrink-0" style={{ background: '#86efac' }} />
-                <span className="text-[11px] font-bold uppercase tracking-[.2em]" style={{ color: '#86efac' }}>
+                <span className="dot-pulse w-2 h-2 rounded-full flex-shrink-0" style={{ background: 'rgba(255,255,255,0.85)' }} />
+                <span className="text-[11px] font-bold uppercase tracking-[.2em]" style={{ color: 'rgba(255,255,255,0.85)' }}>
                   Operación Activa
                 </span>
               </div>
